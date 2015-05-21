@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_auto_build:
+	cp ruby/command-t/metadata.rb ruby/command-t/.metadata.rb.orig
+	cd ruby/command-t && ruby extconf.rb
+	make -C ruby/command-t
+
+override_dh_auto_clean:
+	if [ -f ruby/command-t/Makefile ]; then \
+		make -C ruby/command-t clean; \
+		rm ruby/command-t/Makefile; \
+	fi
+	if [ -f ruby/command-t/.metadata.rb.orig ]; then \
+		mv ruby/command-t/.metadata.rb.orig ruby/command-t/metadata.rb; \
+	fi

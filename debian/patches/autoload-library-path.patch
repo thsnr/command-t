@@ -1,0 +1,30 @@
+use package library directory in module autoload
+Index: vim-command-t-1.13/autoload/commandt.vim
+===================================================================
+--- vim-command-t-1.13.orig/autoload/commandt.vim
++++ vim-command-t-1.13/autoload/commandt.vim
+@@ -188,6 +188,7 @@ augroup END
+ ruby << EOF
+   # require Ruby files
+   begin
++    $LOAD_PATH << "/usr/lib/vim-command-t"
+     require 'command-t'
+ 
+     # Make sure we're running with the same version of Ruby that Command-T was
+@@ -203,16 +204,6 @@ ruby << EOF
+       $command_t = CommandT::Stub.new
+     end
+   rescue LoadError
+-    load_path_modified = false
+-    ::VIM::evaluate('&runtimepath').to_s.split(',').each do |path|
+-      lib = "#{path}/ruby"
+-      if !$LOAD_PATH.include?(lib) && File.exist?(lib)
+-        $LOAD_PATH << lib
+-        load_path_modified = true
+-      end
+-    end
+-    retry if load_path_modified
+-
+     $command_t = CommandT::Stub.new
+   end
+ EOF

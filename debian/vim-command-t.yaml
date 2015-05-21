@@ -1,0 +1,7 @@
+addon: command-t
+description: fast file navigation
+basedir: /usr/share/vim-command-t
+files:
+  - autoload/commandt.vim
+  - doc/command-t.txt
+  - plugin/command-t.vim

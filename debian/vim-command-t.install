@@ -1,0 +1,11 @@
+autoload/*			usr/share/vim-command-t/autoload/
+doc/*				usr/share/vim-command-t/doc/
+plugin/*			usr/share/vim-command-t/plugin/
+ruby/*.rb			usr/lib/vim-command-t/
+ruby/command-t/*.rb		usr/lib/vim-command-t/command-t/
+ruby/command-t/*.so		usr/lib/vim-command-t/command-t/
+ruby/command-t/finder/*		usr/lib/vim-command-t/command-t/finder
+ruby/command-t/scanner/*	usr/lib/vim-command-t/command-t/scanner
+ruby/command-t/vim/*		usr/lib/vim-command-t/command-t/vim
+
+debian/vim-command-t.yaml	usr/share/vim/registry/

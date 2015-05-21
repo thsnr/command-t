@@ -1,0 +1,14 @@
+Source: vim-command-t
+Priority: optional
+Maintainer: Tiit Pikma <thsnr@users.noreply.github.com>
+Build-Depends: debhelper (>= 9), ruby, ruby-dev
+Standards-Version: 3.9.5
+Section: libs
+
+Package: vim-command-t
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: vim-addon-manager
+Description: fast file navigation for Vim
+ The Command-T plug-in provides an extremely fast, intuitive mechanism for
+ opening files and buffers with a minimal number of keystrokes.
